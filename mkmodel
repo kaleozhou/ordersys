@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# ******************************************************
+# Author       : kaleo
+# Last modified: 2017-02-10 08:23
+# Email        : kaleo1990@hotmail.com
+# Filename     : mkmodel
+# Description  : 
+# ******************************************************
+php artisan make:model Model/Product
+php artisan make:model Model/Order
+php artisan make:model Model/Img
+php artisan make:model Model/Category
+php artisan make:model Model/Attribute
+php artisan make:model Model/Customer
+php artisan make:model Model/Stock
+php artisan make:model Model/Logistic
+
