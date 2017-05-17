@@ -68,9 +68,8 @@ class UserdataController extends Controller
                     $userdata->from=$from;
                     $keyword=Keyword::where('url',$from)->first();
                     if (!empty($keyword)) {
-                        $userdata->qq=$keyword->url;
+                        $userdata->qq=$keyword->keyword;
                     }
-
                     $i++;
                 }
                 if (!empty($input['qq'])) {
