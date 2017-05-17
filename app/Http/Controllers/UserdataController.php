@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Model\Userdata;
+use App\Model\Keyword;
 use Illuminate\Http\Request;
 use Log;
 class UserdataController extends Controller
@@ -63,7 +64,13 @@ class UserdataController extends Controller
                     $i++;
                 }
                 if (!empty($input['from'])) {
+                    $from=$input['from'];
                     $userdata->from=$from;
+                    $keyword=Keyword::where('url',$from)->first();
+                    if (!empty($keyword)) {
+                        $userdata->qq=$keyword->url;
+                    }
+
                     $i++;
                 }
                 if (!empty($input['qq'])) {
