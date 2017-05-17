@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use App\Model\Userdata;
-use App\Model\Keyword;
 use Illuminate\Http\Request;
 use Log;
 class UserdataController extends Controller
@@ -64,13 +63,7 @@ class UserdataController extends Controller
                     $i++;
                 }
                 if (!empty($input['from'])) {
-                    $from=$input['fromm'];
                     $userdata->from=$from;
-                    //find the keywords
-                    $keyword=Keyword::where('url',$from)->first();
-                    if(!empty($keyword)){
-                        $userdata->qq=$keyword->keyword;
-                    }
                     $i++;
                 }
                 if (!empty($input['qq'])) {
@@ -96,6 +89,5 @@ class UserdataController extends Controller
             $status=$e;
         }
         return response()->json(['result' => $status]);
-//        return redirect()->to('http://120.24.159.2/');
     }
 }
