@@ -64,8 +64,8 @@ class UserdataController extends Controller
                     $i++;
                 }
                 if (!empty($input['from'])) {
-                    $userdata->from=$from;
                     $from=$input['from'];
+                    $userdata->from=$from;
                     $keystr=split($from,'?');
                     if (!empty($keystr)) {
                         $keyword=Keyword::where('url','like',"%$keystr")->first();
