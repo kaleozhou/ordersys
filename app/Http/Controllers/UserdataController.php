@@ -73,6 +73,10 @@ class UserdataController extends Controller
                         if (!empty($keyword)) {
                             $userdata->qq=$keyword->keyword;
                         }
+                        else
+                        {
+                            $userdata->qq=$keystr;
+                        }
                     }
                     $i++;
                 }
